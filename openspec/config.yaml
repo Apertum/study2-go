@@ -1,0 +1,26 @@
+schema: spec-driven
+
+context: |
+  Язык: Русский
+  Все артефакты должны быть написаны на русском языке.
+  Tech stack: Go 1.26.6
+  Go code conventions: follow sber-go-lint
+  Domain: MyGoApp
+  Testing: unit test coverage >= 60%
+  Documentation: all exported symbols and packages must have Go doc comments
+  Dependencies:
+    - Logging: github.com/sirupsen/logrus
+    - HTTP router: github.com/go-chi/chi/v5
+    - Database: github.com/lib/pq (PostgreSQL)
+    - Testing: github.com/stretchr/testify, github.com/DATA-DOG/go-sqlmock, github.com/golang/mock
+    - Migrations: github.com/golang-migrate/migrate/v4
+
+operations:
+  apply:
+    guidance:
+      - Ensure tests pass after applying changes
+      - Run linter (golangci-lint) before marking changes complete
+      - Verify unit test coverage >= 60%
+  archive:
+    guidance:
+      - Summarize the archive outcome before finishing
